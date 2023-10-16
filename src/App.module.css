@@ -1,0 +1,9 @@
+.container {
+    color: blue;
+    padding: 20px;
+}
+.persons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
