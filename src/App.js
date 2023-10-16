@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import styles from "./App.module.css";
 import Ticket from "./components/Ticket/Ticket";
 import { Counter } from "./components/Counter/Counter";
+import Input from "./components/Input/Input";
+import Tickets from "./components/Tickets/Tickets";
 // 1. components
 // 2. create Ticket component with ticket parameter
 // 3. create Ticket.module.css ( classname = {styles.x}  )
@@ -21,17 +23,17 @@ function App() {
         },
         {
             id: 2,
-            fname: "oren",
+            fname: "david",
             lname: "davidi",
         },
         {
             id: 3,
-            fname: "oren",
+            fname: "yoel",
             lname: "davidi",
         },
         {
             id: 4,
-            fname: "oren",
+            fname: "uzi",
             lname: "davidi",
         },
         {
@@ -41,25 +43,19 @@ function App() {
         },
     ];
 
-    const personList = persons.map((item, index) => {
-        return <Ticket key={index} ticket={item} />;
-    });
-    console.log("App render again");
-
     //phase 3 - return jsx
     return (
         <div className={styles.container}>
+            <Input />
+            <Counter />
             <h1>
-                <Counter />
                 Welcome {persons[0].fname} {persons[0].lname}
-                {/* <Ticket ticket={persons[0]} /> */}
-                <div>
-                    <input type="text" />
-                </div>
-                <div className={styles.persons}>{personList}</div>
             </h1>
+            {/* <Ticket ticket={persons[0]} /> */}
+            <div>
+                <Tickets tickets={persons} />
+            </div>
         </div>
     );
 }
-
 export default App;
